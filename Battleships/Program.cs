@@ -1,14 +1,19 @@
-﻿using System;
-using Battleships.Core;
+﻿using Battleships.Core;
 
-namespace Battleships
+namespace Battleships;
+
+internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
+        var ships = new List<ShipClass>
         {
-            var engine = new Engine(new ConsoleInputProvider(), new RandomGridBuilder(new Random(), 10));
-            engine.Run();
-        }
+            ShipClass.Battleship,
+            ShipClass.Destroyer,
+            ShipClass.Destroyer
+        };
+
+        var engine = new Engine(new ConsoleInputProvider(), new RandomGridBuilder(new Random(), 10));
+        engine.Run(ships);
     }
 }

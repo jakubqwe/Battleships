@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Battleships.Core;
 
-namespace Battleships.Core
+public class Tile
 {
-    public class Tile
+    public Tile()
     {
-        public bool IsHit { get; set; }
-        public Tile()
-        {
-            IsHit = false;
-        }
+        IsHit = false;
     }
+
+    public bool IsHit { get; set; }
 }

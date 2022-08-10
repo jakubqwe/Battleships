@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Battleships.Core;
 
-namespace Battleships.Core
+public interface IGridBuilder
 {
-    public interface IGridBuilder
-    {
-        void AddShips(IEnumerable<ShipClass> ships);
-        Tile[,] GetGrid();
-        
-    }
+    void AddShips(IEnumerable<ShipClass> shipClasses);
+    Tile[,] GetGrid();
 }

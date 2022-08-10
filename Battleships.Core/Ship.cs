@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Battleships.Core;
 
-namespace Battleships.Core
+public class Ship
 {
-    public class Ship
+    public int TilesNumber;
+
+    public Ship(int tilesNumber, ShipClass shipClass)
     {
-        public int TilesNumber;
-        public ShipClass ShipClass { get; }
-        public bool IsSunk => TilesNumber == 0;
+        TilesNumber = tilesNumber;
+        ShipClass = shipClass;
+    }
 
-        public Ship(int tilesNumber, ShipClass shipClass)
-        {
-            TilesNumber = tilesNumber;
-            ShipClass = shipClass;
-        }
+    public ShipClass ShipClass { get; }
+    public bool IsSunk => TilesNumber == 0;
 
-        public void Hit()
-        {
-            TilesNumber--;
-        }
+    public void Hit()
+    {
+        TilesNumber--;
     }
 }
