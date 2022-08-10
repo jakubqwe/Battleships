@@ -1,4 +1,5 @@
 ﻿using System;
+using Battleships.Core;
 
 namespace Battleships
 {
@@ -6,7 +7,8 @@ namespace Battleships
     {
         static void Main(string[] args)
         {
-            
+            var engine = new Engine(new ConsoleInputProvider(), new RandomGridBuilder(new Random(), 10));
+            engine.Run();
         }
     }
 }
