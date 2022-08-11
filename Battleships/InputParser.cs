@@ -14,7 +14,7 @@ public static class InputParser
 
         if (!char.IsLetter(input[0]) || !char.IsNumber(input[1]))
         {
-            throw new ArgumentException("Invalid input format", nameof(input));
+            throw new FormatException("Invalid input format");
         }
 
         var y = int.Parse(input.Substring(1));

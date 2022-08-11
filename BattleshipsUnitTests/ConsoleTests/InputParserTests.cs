@@ -17,12 +17,19 @@ public class InputParserTests
     }
 
     [Theory]
-    [InlineData("A")]
-    [InlineData("A ")]
     [InlineData("10")]
     [InlineData("AA")]
+    [InlineData("A1A")]
+    public void ParseCoordsFormatExceptionTest(string input)
+    {
+        Assert.Throws<FormatException>(() => InputParser.ParseCoords(input));
+    }
+
+    [Theory]
     [InlineData("")]
-    public void ParseCoordsExceptionsTest(string input)
+    [InlineData("1")]
+    [InlineData("A ")]
+    public void ParseCoordsArgumentExceptionTest(string input)
     {
         Assert.Throws<ArgumentException>(() => InputParser.ParseCoords(input));
     }
