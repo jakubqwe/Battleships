@@ -15,5 +15,6 @@ internal class Program
 
         var engine = new Engine(new ConsoleInputProvider(), new RandomGridBuilder(new Random(), 10));
         engine.Run(ships);
+        Console.Read();
     }
 }
